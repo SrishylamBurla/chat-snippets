@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Socket.IO chat</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <ul id="messages"></ul>
+    <form id="form" action="">
+      <input id="input" autocomplete="off" /><button>Send</button>
+    </form>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      const socket = io();
+      // console.log(socket);
+      socket.on("messageFromServer", (message) =>{
+        console.log('Received from server:', message)
+      });
+
+      socket.emit("messageFrom")
+      
+    </script>
+  </body>
+</html>
